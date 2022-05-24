@@ -59,6 +59,11 @@ double derangement_fraction(int n_samples){
     return n_samples * 1.0 / derangements;
 }
 
+
+/**
+ * My std_dev seems to be calculating a too low value. Consistently by about a factor of 5.
+ * The derangement method seems to be generating a very non-normal distribution.
+ */
 using E = double;
 template <typename IT>
 E std_dev(IT begin, IT end){
@@ -72,8 +77,8 @@ E std_dev(IT begin, IT end){
 }
 
 int main() {
-    auto MAX_COUNT = 1000U;
-    auto SAMPLES = 1000U;
+    auto MAX_COUNT = 1000U; // Makes for precision
+    auto SAMPLES = 100U;  // Makes for accuracy
     auto results = std::vector<double>();
     for(auto count = 0U; count < MAX_COUNT; count++ ){
         results.push_back(derangement_fraction(SAMPLES));
