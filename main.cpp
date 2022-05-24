@@ -63,6 +63,7 @@ double derangement_fraction(int n_samples){
 /**
  * My std_dev seems to be calculating a too low value. Consistently by about a factor of 5.
  * The derangement method seems to be generating a very non-normal distribution.
+ *
  */
 using E = double;
 template <typename IT>
